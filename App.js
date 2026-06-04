@@ -7,7 +7,7 @@ import {useContext, useEffect, useRef} from "react";
 import {ThemeContext, ThemeProvider} from "./contexts/themeContext";
 
 const MainApp = () => {
-  const {theme, setTheme} = useContext(ThemeContext);
+  const {theme, toggleTheme} = useContext(ThemeContext);
   const animation = useRef(new Animated.Value(theme === "dark" ? 1 : 0)).current;
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const MainApp = () => {
         <Timer/>*/}
         <TaskList/>
         <View style={globalStyles.centering}>
-          <Pressable style={[globalStyles.changeTheme, {backgroundColor: bgColor}]} onPress={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+          <Pressable style={[globalStyles.changeTheme, {backgroundColor: bgColor}]} onPress={toggleTheme}>
             <Text style={[globalStyles.changeThemeText, {color: textColor}]}>
               {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
             </Text>

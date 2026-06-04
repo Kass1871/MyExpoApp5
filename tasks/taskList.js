@@ -86,7 +86,7 @@ export default function TaskList() {
 
                 <View style={globalStyles.actions}>
                     <Pressable onPress={() => handleEdit(item)}>
-                        <Text styles={globalStyles.actionText}>Edit</Text>
+                        <Text style={globalStyles.actionText}>Edit</Text>
                     </Pressable>
 
                     <Pressable onPress={() => handleDelete(item.id)}>
